@@ -22,6 +22,9 @@ describe('AppComponent', () => {
         HttpModule,
         MaterialModule,
         FlexLayoutModule
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
       ]
     }).compileComponents();
   }));
