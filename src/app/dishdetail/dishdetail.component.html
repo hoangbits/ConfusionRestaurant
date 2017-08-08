@@ -1,10 +1,5 @@
-<div class="container" 
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around-center"
-    fxLayoutGap="10px"
-    fxLayoutGap.xs="0">
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around-center"
+  fxLayoutGap="10px" fxLayoutGap.xs="0">
   <div fxFlex="40" *ngIf="dish">
     <md-card>
       <md-card-header>
@@ -19,17 +14,18 @@
       <md-card-actions>
         <button md-button>LIKE</button>
         <button md-button>SHARE</button>
+        <button md-button (click)="goBack()">BACK</button>
       </md-card-actions>
     </md-card>
   </div>
-  <div fxFlex="40" *ngIf="dish">  
+  <div fxFlex="40" *ngIf="dish">
     <md-list>
       <h3 md-subheder>Comments </h3>
       <md-divider></md-divider>
       <md-list-item *ngFor="let comment of dish?.comments">
-            <p md-line>{{comment.comment}}</p>
-            <p md-line>{{comment.rating}} Stars</p>
-            <p md-line>-- {{comment.author}} {{comment.date | date}}</p> 
+        <p md-line>{{comment.comment}}</p>
+        <p md-line>{{comment.rating}} Stars</p>
+        <p md-line>-- {{comment.author}} {{comment.date | date}}</p>
       </md-list-item>
     </md-list>
   </div>
