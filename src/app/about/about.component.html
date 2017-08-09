@@ -1,3 +1,10 @@
-<p>
-  about works!
-</p>
+<md-list>
+  <md-list-item *ngFor="let leader of leaders">
+    <img md-list-avatar src="{{leader.image}}" alt="{{leader.name}}">
+    <h3 md-line>{{leader.name}}</h3>
+    <p md-line>
+      {{leader.designation}}
+    </p>
+    <p md-line>{{leader.description}}</p>
+  </md-list-item>
+</md-list>
