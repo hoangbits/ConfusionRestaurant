@@ -20,7 +20,7 @@
   </div>
   <div fxFlex="40" *ngIf="dish">
     <md-list>
-      <h3 md-subheder>Comments </h3>
+      <h3 md-subheader>Comments </h3>
       <md-divider></md-divider>
       <md-list-item *ngFor="let comment of dish?.comments">
         <p md-line>{{comment.comment}}</p>
@@ -28,5 +28,10 @@
         <p md-line>-- {{comment.author}} {{comment.date | date}}</p>
       </md-list-item>
     </md-list>
+  </div>
+
+  <div bind-hidden="dish">
+    <md-spinner></md-spinner>
+    <h4>Loading...Please Wait</h4>
   </div>
 </div>

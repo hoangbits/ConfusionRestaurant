@@ -1,10 +1,19 @@
-<md-list>
-  <md-list-item *ngFor="let leader of leaders">
-    <img md-list-avatar src="{{leader.image}}" alt="{{leader.name}}">
-    <h3 md-line>{{leader.name}}</h3>
-    <p md-line>
-      {{leader.designation}}
-    </p>
-    <p md-line>{{leader.description}}</p>
-  </md-list-item>
-</md-list>
+<div fxFlex>
+  <h2>Corporate Leader</h2>
+
+  <md-list *ngIf="leaders">
+    <md-list-item *ngFor="let leader of leaders">
+      <img md-list-avatar src="{{leader.image}}" alt="{{leader.name}}">
+      <h3 md-line>{{leader.name}}</h3>
+      <p md-line>
+        {{leader.designation}}
+      </p>
+      <p md-line>{{leader.description}}</p>
+    </md-list-item>
+  </md-list>
+  <div bind-hidden="leaders">
+    <md-spinner></md-spinner>
+    <h4>Loading...Please Wait</h4>
+  </div>
+
+</div>
