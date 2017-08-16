@@ -1,15 +1,26 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { ProcessHTTPMsgService } from "./process-httpmsg.service";
+import { baseURL } from "./../shared/baseurl";
+import { TestBed, inject } from "@angular/core/testing";
+import "rxjs/add/operator/delay";
+import "rxjs/add/observable/of";
+import { Observable } from "rxjs/Observable";
+import { LeaderService } from "./leader.service";
 
-import { LeaderService } from './leader.service';
-
-describe('LeaderService', () => {
+describe("LeaderService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [LeaderService]
+      providers: [
+        LeaderService,
+        { provide: "BaseURL", useValue: baseURL },
+        ProcessHTTPMsgService
+      ]
     });
   });
 
-  it('should be created', inject([LeaderService], (service: LeaderService) => {
-    expect(service).toBeTruthy();
-  }));
+  it(
+    "should be created",
+    inject([LeaderService], (service: LeaderService) => {
+      expect(service).toBeTruthy();
+    })
+  );
 });

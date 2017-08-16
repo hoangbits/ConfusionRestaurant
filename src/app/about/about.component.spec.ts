@@ -1,17 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { AboutComponent } from './about.component';
-
-describe('AboutComponent', () => {
+import { LeaderService } from "./../services/leader.service";
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { AboutComponent } from "./about.component";
+import { MaterialModule } from "@angular/material";
+describe("AboutComponent", () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [AboutComponent],
+        imports: [MaterialModule],
+        schemas: [CUSTOM_ELEMENTS_SCHEMA],
+        providers: [LeaderService]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AboutComponent);
@@ -19,7 +24,7 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(component).toBeTruthy();
   });
 });
