@@ -77,9 +77,9 @@ export class ContactComponent implements OnInit {
       //clear the previous message (if any)
       this.formErrors[field] = "";
       const control = form.get(field);
-      if (control && control.dirty && !control.valid) {      
+      if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
-        for (const key in control.errors) {        
+        for (const key in control.errors) {
           this.formErrors[field] += messages[key] + " ";
         }
       }
@@ -88,7 +88,6 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
     this.feedbackForm.reset({
       firstname: "",
       lastname: "",
@@ -98,9 +97,5 @@ export class ContactComponent implements OnInit {
       contacttype: "",
       message: ""
     });
-  }
-
-  log(val) {
-    console.log(val);
   }
 }
