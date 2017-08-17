@@ -38,8 +38,7 @@ before_script:
 - yarn global add karma
 - yarn install
 - ng build
-install:
-- yarn --frozen-lockfile
+
 script: 
   ng test
   ng serve
