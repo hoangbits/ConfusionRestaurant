@@ -1,3 +1,11 @@
+# LEARNED
+[x] angular app architecture, module, component
+[x] data binding, 1-way, 2-way & SPA app with routing, service
+[x] template-driven form, reactive forms, RxJS
+[x] angular support for HTTP to make client-server communication
+[] develop angular directives and animations 
+
+
 # Confusion
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
