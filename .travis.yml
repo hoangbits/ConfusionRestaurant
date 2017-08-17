@@ -40,5 +40,5 @@ before_script:
 - ng build
 
 script: 
-  ng test
-  ng serve
+-  ng test
+-  ng serve
