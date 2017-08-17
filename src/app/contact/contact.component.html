@@ -52,14 +52,14 @@
       </p>
       <p>
         <md-input-container class="half-width" dividerColor="{{
-          formErrors.telnum ? 'warn' : 'primary' }}">
+          formErrors.telnum ? 'warn' : 'primary'}}">
           <input mdInput formControlName="telnum" placeholder="Tel. Number" type="tel" pattern="[0-9]*" required>
           <md-hint>
             <span bind-hidden="!formErrors.telnum">{{formErrors.telnum}}</span>
           </md-hint>
         </md-input-container>
         <md-input-container class="half-width" dividerColor="{{ 
-          formErrors.email ? 'warn' : primary }}">
+          formErrors.email ? 'warn' : 'primary' }}">
           <input mdInput formControlName="email" placeholder="Email" type="email" email required>
           <md-hint>
             <span bind-hidden="!formErrors.email">{{formErrors.email}}</span>
