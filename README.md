@@ -5,6 +5,10 @@
 [x] angular support for HTTP to make client-server communication
 [] develop angular directives and animations 
 
+# SEE DEMO
+
+##http://veganrestaurant-8c59e.firebaseapp.com/home
+##please using http, because our api ins't support https
 
 # Confusion
 
