@@ -7,14 +7,14 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [Byzanz](https://github.com/GNOME/byzanz).
 
-# LEARNED
-[x] angular app architecture, module, component
-[x] data binding, 1-way, 2-way & SPA app with routing, service
-[x] template-driven form, reactive forms, RxJS
-[x] angular support for HTTP to make client-server communication
-[] develop angular directives and animations 
+## WHAT I HAVE LEARNED
+* [x] angular app architecture, module, component 
+* [x] data binding, 1-way, 2-way & SPA app with routing, service
+* [x] template-driven form, reactive forms, RxJS
+* [x] angular support for HTTP to make client-server communication
+* [] develop angular directives and animations 
 
-# SEE DEMO
+## SEE DEMO
 
 ##http://veganrestaurant-8c59e.firebaseapp.com/home
 ##please using http, because our api ins't support https
