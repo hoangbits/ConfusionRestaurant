@@ -1,3 +1,12 @@
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+
+![Video Walkthrough](walkthrough.gif)
+
+GIF created with [Byzanz](https://github.com/GNOME/byzanz).
+
 # LEARNED
 [x] angular app architecture, module, component
 [x] data binding, 1-way, 2-way & SPA app with routing, service
