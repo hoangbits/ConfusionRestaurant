@@ -16,8 +16,11 @@ GIF created with [Byzanz](https://github.com/GNOME/byzanz).
 
 ## SEE DEMO
 
+##http://13.229.0.9/
+OR
 ##http://veganrestaurant-8c59e.firebaseapp.com/home
-##please using http, because our api ins't support https
+
+##please using first http link, because the api ins't support https
 
 # Confusion
 
