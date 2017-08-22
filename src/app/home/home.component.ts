@@ -5,7 +5,7 @@ import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import { Promotion } from './../shared/promotion';
 import { PromotionService } from './../services/promotion.service';
-import { flyInOut } from './../animations/app.animation';
+import { expand, flyInOut } from './../animations/app.animation';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +14,7 @@ import { flyInOut } from './../animations/app.animation';
     '[@flyInOut]': 'true',
     style: 'display: block',
   },
-  animations: [flyInOut()],
+  animations: [flyInOut(), expand()],
 })
 export class HomeComponent implements OnInit {
   dish: Dish;

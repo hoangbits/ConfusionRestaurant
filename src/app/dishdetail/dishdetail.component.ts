@@ -1,17 +1,17 @@
-import { Comment } from "./../shared/comment";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Component, OnInit, Input, Inject } from "@angular/core";
-import { Dish } from "./../shared/dish";
-import { DishService } from "./../services/dish.service";
-import { Params, ActivatedRoute } from "@angular/router";
-import { Location } from "@angular/common";
-import "rxjs/add/operator/switchMap";
-import { visibility } from "../animations/app.animation";
+import { Comment } from './../shared/comment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Dish } from './../shared/dish';
+import { DishService } from './../services/dish.service';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+import { expand, visibility } from '../animations/app.animation';
 @Component({
-  selector: "app-dishdetail",
-  templateUrl: "./dishdetail.component.html",
-  styleUrls: ["./dishdetail.component.scss"],
-  animations: [visibility()]
+  selector: 'app-dishdetail',
+  templateUrl: './dishdetail.component.html',
+  styleUrls: ['./dishdetail.component.scss'],
+  animations: [visibility(), expand()],
 })
 export class DishdetailComponent implements OnInit {
   dish: Dish;
@@ -22,24 +22,24 @@ export class DishdetailComponent implements OnInit {
   addcommentForm: FormGroup;
   comment: Comment;
   errMess: string;
-  visibility = "shown";
+  visibility = 'shown';
 
   formErrors = {
-    author: "",
-    rating: "",
-    comment: ""
+    author: '',
+    rating: '',
+    comment: '',
   };
 
   validationMessages = {
     author: {
-      required: "Author Name is required",
-      minlength: "Author Name must be at least 2 characters long.",
-      maxlength: "Author Name cannot be more than 25 characters long."
+      required: 'Author Name is required',
+      minlength: 'Author Name must be at least 2 characters long.',
+      maxlength: 'Author Name cannot be more than 25 characters long.',
     },
     rating: {},
     comment: {
-      required: "Comment is required."
-    }
+      required: 'Comment is required.',
+    },
   };
 
   constructor(
@@ -47,7 +47,7 @@ export class DishdetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private formBuilder: FormBuilder,
-    @Inject("BaseURL") private BaseURL
+    @Inject('BaseURL') private BaseURL,
   ) {
     this.createForm();
   }
@@ -59,24 +59,24 @@ export class DishdetailComponent implements OnInit {
       },
       errmess => {
         this.errMess = <any>errmess;
-      }
+      },
     );
     this.route.params
       .switchMap((params: Params) => {
-        this.visibility = "hidden";
-        return this.dishService.getDish(+params["id"]);
+        this.visibility = 'hidden';
+        return this.dishService.getDish(+params['id']);
       })
       .subscribe(
         dish => {
           this.dish = dish;
           this.dishcopy = dish;
           this.setPrevNext(dish.id);
-          this.visibility = "shown";
+          this.visibility = 'shown';
         },
         errmess => {
           this.dish = null;
           this.errMess = <any>errmess;
-        }
+        },
       );
   }
 
@@ -97,11 +97,15 @@ export class DishdetailComponent implements OnInit {
   createForm() {
     this.addcommentForm = this.formBuilder.group({
       author: [
-        "",
-        [Validators.required, Validators.minLength(2), Validators.maxLength(25)]
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(25),
+        ],
       ],
-      rating: "",
-      comment: ["", Validators.required]
+      rating: '',
+      comment: ['', Validators.required],
     });
     this.addcommentForm.valueChanges.subscribe(data => {
       this.onValueChanged(data);
@@ -115,12 +119,12 @@ export class DishdetailComponent implements OnInit {
     }
     const form = this.addcommentForm;
     for (const field in this.formErrors) {
-      this.formErrors[field] = ""; // clear the previous message (if any)
+      this.formErrors[field] = ''; // clear the previous message (if any)
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
-          this.formErrors[field] += messages[key] + " ";
+          this.formErrors[field] += messages[key] + ' ';
         }
       }
     }
@@ -139,9 +143,9 @@ export class DishdetailComponent implements OnInit {
       console.log(this.dish);
     });
     this.addcommentForm.reset({
-      author: "",
-      rating: "5",
-      comment: ""
+      author: '',
+      rating: '5',
+      comment: '',
     });
   }
 }
