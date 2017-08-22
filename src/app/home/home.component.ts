@@ -1,14 +1,20 @@
-import { Leader } from "./../shared/leader";
-import { LeaderService } from "./../services/leader.service";
-import { Component, OnInit, Inject } from "@angular/core";
-import { Dish } from "../shared/dish";
-import { DishService } from "../services/dish.service";
-import { Promotion } from "./../shared/promotion";
-import { PromotionService } from "./../services/promotion.service";
+import { Leader } from './../shared/leader';
+import { LeaderService } from './../services/leader.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Dish } from '../shared/dish';
+import { DishService } from '../services/dish.service';
+import { Promotion } from './../shared/promotion';
+import { PromotionService } from './../services/promotion.service';
+import { flyInOut } from './../animations/app.animation';
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    style: 'display: block',
+  },
+  animations: [flyInOut()],
 })
 export class HomeComponent implements OnInit {
   dish: Dish;
@@ -19,7 +25,7 @@ export class HomeComponent implements OnInit {
     private dishservice: DishService,
     private promotionservice: PromotionService,
     private leaderService: LeaderService,
-    @Inject("BaseURL") private BaseURL
+    @Inject('BaseURL') private BaseURL,
   ) {}
 
   ngOnInit() {
@@ -27,7 +33,7 @@ export class HomeComponent implements OnInit {
       featuredDish => (this.dish = featuredDish),
       errmess => {
         this.dishErrMess = <any>errmess;
-      }
+      },
     );
     this.promotionservice
       .getFeaturedPromotion()
