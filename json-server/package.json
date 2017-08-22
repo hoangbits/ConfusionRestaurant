@@ -1,0 +1,9 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "browser": "json-server --watch db.json -d 2000"
+  }
+}
