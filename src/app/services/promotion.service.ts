@@ -1,9 +1,9 @@
-import { Observable } from "rxjs/Observable";
-import { Injectable } from "@angular/core";
-import { Promotion } from "../shared/promotion";
-import { PROMOTIONS } from "../shared/promotions";
-import "rxjs/add/operator/delay";
-import "rxjs/add/observable/of";
+import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Promotion } from '../shared/promotion';
+import { PROMOTIONS } from '../shared/promotions';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class PromotionService {

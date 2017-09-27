@@ -1,18 +1,18 @@
-import { ProcessHTTPMsgService } from "./process-httpmsg.service";
-import { baseURL } from "./../shared/baseurl";
-import { Http, Response } from "@angular/http";
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
+import { baseURL } from './../shared/baseurl';
+import { Http, Response } from '@angular/http';
 
-import { Injectable } from "@angular/core";
-import { Dish } from "./../shared/dish";
-import { DISHES } from "./../shared/dishes";
+import { Injectable } from '@angular/core';
+import { Dish } from './../shared/dish';
+import { DISHES } from './../shared/dishes';
 
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-import "rxjs/add/operator/delay";
-import "rxjs/add/observable/of";
-import "rxjs/add/operator/catch";
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
 
-import { RestangularModule, Restangular } from "ngx-restangular";
+import { RestangularModule, Restangular } from 'ngx-restangular';
 
 @Injectable()
 export class DishService {
@@ -22,14 +22,14 @@ export class DishService {
   ) {}
 
   getDishes(): Observable<Dish[]> {
-    return this.restangular.all("dishes").getList();
+    return this.restangular.all('dishes').getList();
   }
   getDish(id: number): Observable<Dish> {
-    return this.restangular.one("dishes", id).get();
+    return this.restangular.one('dishes', id).get();
   }
   getFeaturedDish(): Observable<Dish> {
     return this.restangular
-      .all("dishes")
+      .all('dishes')
       .getList({ featured: true })
       .map(dishes => dishes[0]);
   }
